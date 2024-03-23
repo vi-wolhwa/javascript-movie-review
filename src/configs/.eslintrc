@@ -15,7 +15,7 @@
   "parserOptions": {
     "ecmaVersion": "latest"
   },
-  "plugins": ["@typescript-eslint", "cypress"],
+  "plugins": ["@typescript-eslint", "cypress", "prettier"],
   "rules": {
     "max-depth": ["warn", 1],
     "max-lines-per-function": ["warn", { "max": 10 }],
