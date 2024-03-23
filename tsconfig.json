@@ -1,17 +1,12 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "baseUrl": ".",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "lib": ["ES6", "dom"],
     "module": "ESNext",
     "moduleResolution": "node",
     "noImplicitAny": true,
-    "paths": {
-      "@styles/*": ["src/styles/*"],
-      "@utils/*": ["src/utils/*"]
-    },
     "removeComments": true,
     "skipLibCheck": true,
     "strict": true,
@@ -20,5 +15,5 @@
     "types": ["cypress", "node"]
   },
   "exclude": ["node_modules", "dist"],
-  "include": ["src/**/*.ts", "cypress/**/*.ts", "src/resources.js", "src/utils/domUtils.js", "cypress.config.ts"]
+  "include": ["src/**/*.ts", "cypress/**/*.ts"]
 }
