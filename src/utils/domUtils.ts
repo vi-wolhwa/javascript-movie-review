@@ -33,3 +33,31 @@ export const $$ = (selector: string, scope: Document | Element = document, throw
 
   return elements;
 };
+
+/**
+ * 주어진 속성 객체를 HTML 요소에 적용하는 함수입니다.
+ * @param element HTML 요소
+ * @param attributes 요소에 적용할 속성들이 담긴 객체
+ */
+export const setAttributes = (element: HTMLElement, attributes: { [key: string]: string }): void => {
+  Object.keys(attributes).forEach((key) => {
+    if (key === 'text') {
+      // 요소의 속성을 변경하는 모듈이므로, 다음 규칙을 비활성화한다.
+      // eslint-disable-next-line no-param-reassign
+      element.innerText = attributes[key];
+    } else {
+      element.setAttribute(key, attributes[key]);
+    }
+  });
+};
+
+/**
+ * 여러 자식 요소들을 부모 요소에 추가합니다.
+ * @param parent - 자식 요소들을 추가할 부모 요소입니다.
+ * @param children - 추가할 자식 요소들의 배열입니다.
+ */
+export const appendChildren = (parent: Element, children: Element[]): void => {
+  children.forEach((child) => {
+    parent.appendChild(child);
+  });
+};
