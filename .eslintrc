@@ -5,12 +5,7 @@
     "es6": true,
     "node": true
   },
-  "extends": [
-    "airbnb-base",
-    "prettier/recommended",
-    "plugin:cypress/recommended",
-    "plugin:@typescript-eslint/recommended"
-  ],
+  "extends": ["airbnb-base", "plugin:cypress/recommended", "plugin:@typescript-eslint/recommended", "prettier"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest"
@@ -18,7 +13,9 @@
   "plugins": ["@typescript-eslint", "cypress", "prettier"],
   "rules": {
     "max-depth": ["warn", 1],
-    "max-lines-per-function": ["warn", { "max": 10 }],
-    "max-params": ["warn", 3]
+    "max-lines-per-function": ["warn", { "max": 10, "skipBlankLines": true, "skipComments": true }],
+    "max-params": ["warn", 3],
+
+    "prefer-template": "off"
   }
 }
